@@ -13,5 +13,11 @@ int main()
         std::cout << "cannot find window qt_msg" << std::endl;
     }
 
+    HANDLE h = CreateEventA(nullptr, FALSE, FALSE, "_qt_event_");
+    if (h) {
+        SetEvent(h);
+        CloseHandle(h);
+    }
+
     return 0;
 }
