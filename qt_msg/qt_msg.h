@@ -15,6 +15,9 @@ public:
     explicit qt_msg(QWidget *parent = nullptr);
     ~qt_msg();
 
+protected:
+    bool nativeEvent(const QByteArray &eventType, void *message, long *result);
+
 private:
     Ui::qt_msg *ui;
 };
